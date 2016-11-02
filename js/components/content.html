@@ -1,0 +1,52 @@
+<section>
+    <table>
+        <tr>
+            <th>#</th>
+            <th>Nom</th>
+            <th>Prenom</th>
+            <th>Age</th>
+            <th>Meteo</th>
+            <th>Ville</th>
+        </tr>
+        <tr ng-class="student.age < {{$ctrl.middleAge}} ? 'teenager' : 'older'" ng-repeat="student in $ctrl.students">
+            <td>{{$index}}</td>
+            <td>{{student.nom}}</td>
+            <td>{{student.prenom}}</td>
+            <td>{{student.age}}</td>
+            <td>{{student.meteo}}</td>
+            <td>{{student.city}}</td>
+        </tr>
+    </table>
+</section>
+<section>
+    <div>
+        Âge Moyen : {{$ctrl.middleAge}}
+    </div>
+    <div>
+        Hommes : {{$ctrl.pariteM}}
+    </div>
+    <div>
+        Femmes : {{$ctrl.pariteF}}
+    </div>
+    <div>
+        Nom le plus long : {{$ctrl.nomLePlusLong}}
+    </div>
+    <br />
+    <div>
+        Liste des élèves par ordre alphabétique :
+
+        <hr />
+        <span ng-bind-html="$ctrl.listAlphabetic"></span>
+    </div>
+    <br />
+    <div>
+        Liste des élèves par âge :
+        <hr />
+        <span ng-bind-html="$ctrl.listByAge"></span>
+    </div>
+    <br />
+<div id="map">
+
+</div>
+
+</section>

@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en" ng-app="app">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Example</title>
+</head>
+
+<body>
+    <simple></simple>
+
+    <message data="'whaaaa'"></message>
+
+    <multi></multi>
+
+    <full age="30"></full>
+</body>
+<script src="libs/angular.min.js">
+</script>
+<script>
+    let app = angular.module('app', []); //je declare le module
+    app.component('simple', {
+      template:'<h1>HELLO WORLD</h1>'
+    })
+    app.component('message', {
+      bindings:{
+        data:"="
+      },
+        template: '<h2>{{$ctrl.data}}</h2>'
+    })
+    app.component('multi', {
+        template: `<h1>{{$ctrl.title}}</h1>
+                    <message data="'mon message'"></message>`,
+        controller: function() {
+            this.title = "coucou chef"
+        }
+    })
+    app.component('full', {
+      bindings:{
+        age:"="
+      },
+      template: '<p>{{$ctrl.annee_de_naissance}}</p>',
+      controller(){
+        this.annee_de_naissance = new Date().getFullYear() - this.age
+      }
+    })
+</script>
+
+</html>
