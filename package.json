@@ -1,0 +1,24 @@
+{
+  "name": "red_wire_wcs_exercise",
+  "version": "1.0.0",
+  "description": "",
+  "main": "angular.min.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/sbstnplcn/red_wire_wcs_exercise.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/sbstnplcn/red_wire_wcs_exercise/issues"
+  },
+  "homepage": "https://github.com/sbstnplcn/red_wire_wcs_exercise#readme",
+  "dependencies": {
+    "body-parser": "^1.15.2",
+    "express": "^4.14.0",
+    "mongoose": "^4.6.5"
+  }
+}
