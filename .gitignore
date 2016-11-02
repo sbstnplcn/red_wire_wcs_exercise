@@ -42,5 +42,3 @@ jspm_packages
 npm-debug.log*
 .jshintrc
 .jshintignore
-/public/
-TODO.md

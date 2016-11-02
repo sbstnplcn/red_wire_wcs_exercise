@@ -1,0 +1,34 @@
+<section>
+    <div>
+        Âge Moyen :
+        {{$ctrl.middleAge}}
+    </div>
+    <div>
+        Hommes :
+        {{$ctrl.pariteM}}
+    </div>
+    <div>
+        Femmes :
+        {{$ctrl.pariteF}}
+    </div>
+    <div>
+        Nom le plus long :
+        {{$ctrl.nomLePlusLong}}
+    </div>
+    <br/>
+    <div>
+        Liste des élèves par ordre alphabétique :
+
+        <hr/>
+        <span ng-bind-html="$ctrl.listAlphabetic"></span>
+    </div>
+    <br/>
+    <div>
+        Liste des élèves par âge :
+        <hr/>
+        <span ng-bind-html="$ctrl.listByAge"></span>
+    </div>
+    <br/>
+    <div id="map"></div>
+
+</section>
