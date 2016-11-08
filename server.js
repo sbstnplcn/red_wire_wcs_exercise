@@ -5,9 +5,13 @@ mongoose.connect('mongodb://localhost:27017/red-wire')
 
 let app = express() // create app
 let userModel = mongoose.model('User', new mongoose.Schema({
-    name: {
-        type: String
-    }
+    nom: String,
+    prenom: String,
+    age: Number,
+    sexe: String,
+    address: String,
+    city: String,
+    github: String
 }))
 
 let users = []
@@ -37,6 +41,8 @@ app.post('/users/', function(req, res) {
         } else {
             res.status(201)
         }
+    }).exec((err, users) => {
+        res.sendStatus(201)
     })
 })
 

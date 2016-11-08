@@ -2,10 +2,10 @@
     'use strict'
     app.component('content', {
         templateUrl: 'js/components/content.html',
-        controller: ['$http', function($http) {
+        controller: ['$http', 'StudentService', function($http, StudentService) {
             angular.extend(this, {
                 $onInit() {
-                    $http.get('/students.json').then((res) => {
+                    StudentService.get().then((res) => {
                         // get table
                         this.students = res.data
                         let student = this.students
@@ -20,7 +20,7 @@
                             // get middleAge
                             totalAge += this.students[i].age
                             this.middleAge = totalAge / this.students.length
-                                //get longestName
+                            //get longestName
                             if (this.students[i].nom.length > longueurNom) {
                                 longueurNom = this.students[i].nom.length;
                                 this.nomLePlusLong = this.students[i].nom;
@@ -109,6 +109,7 @@
                             })
                         }
                     })
+
                 }
             })
         }]
